@@ -1,0 +1,53 @@
+<Sprite>:
+    size: self.size
+    canvas:
+        Color:
+            rgb: self.eclairage
+
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            texture: self.sprite_texture
+<Ship>:
+    canvas:
+        #thrust flame
+        Color:
+            rgba: 1,0,0,.5
+        Triangle:
+            points: self.thrust_triangle
+        
+<Ground>:
+    canvas:
+        Line:
+            circle: root.width*.05,root.width*.05,root.width*.05
+        Line:            
+            circle: root.width*.15,root.width*.05,root.width*.05
+        Line:
+            circle: root.width*.95,root.width*.05,root.width*.05
+        Line:            
+            circle: root.width*.85,root.width*.05,root.width*.05
+        Point:
+            points: self.bullets
+        Color:
+            rgb: 1,0,0
+
+        #Point:
+            #points: self.nose
+        Color:
+            rgb: self.explosion_color
+
+        Point:
+            points: self.explosion
+        
+
+    FloatLayout:
+        Label:
+            text: root.score
+            halign: 'left'
+            x:30
+            y: root.height*.85
+        Label:
+            text: root.life
+            x: 30
+            y: root.height*.75
+            halign: 'left'
